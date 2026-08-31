@@ -166,19 +166,19 @@ export default function AdminBrandingPage() {
 
         <div className="space-y-3 border-t border-[var(--line)] pt-4">
           <div>
-            <h2 className="text-lg font-semibold text-[var(--navy)]">Pay a person email</h2>
+            <h2 className="text-lg font-semibold text-[var(--navy)]">Zelle email</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
               Change the wording, header color, and name image for payment-received mail. Use placeholders: {P2P_PLACEHOLDERS.join(", ")}.
             </p>
           </div>
           <div>
-            <span className="mb-1 block text-sm text-[var(--muted)]">Pay a person name image</span>
+            <span className="mb-1 block text-sm text-[var(--muted)]">Zelle name image</span>
             <p className="mb-2 text-sm text-[var(--muted)]">
-              This graphic replaces the default website name image on Pay a person emails only.
+              This graphic replaces the default website name image on Zelle emails only.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <button type="button" onClick={() => p2pNameImageRef.current?.click()} className="btn-secondary">
-                Upload Pay a person name image
+                Upload Zelle name image
               </button>
               {p2pEmail.nameImage && (
                 <button type="button" onClick={() => setP2pEmail({ ...p2pEmail, nameImage: "" })} className="text-sm font-semibold text-red-700">
@@ -207,7 +207,7 @@ export default function AdminBrandingPage() {
                 <p className="text-lg font-semibold text-white">{name || DEFAULT_BRAND.name}</p>
               )}
               <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-white">
-                {p2pEmail.nameImage ? "Pay a person name image" : "Default name image"}
+                {p2pEmail.nameImage ? "Zelle name image" : "Default name image"}
               </p>
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function AdminBrandingPage() {
             />
           </label>
           <button type="button" onClick={() => setP2pEmail(DEFAULT_P2P_EMAIL)} className="text-sm font-semibold text-[var(--blue)]">
-            Reset Pay a person email
+            Reset Zelle email
           </button>
         </div>
 

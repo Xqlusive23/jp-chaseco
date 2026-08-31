@@ -25,7 +25,7 @@ function methodLabel(notice: TransferNotice) {
   if (notice.transferType === "ach") return "ACH transfer";
   if (notice.transferType === "bill") return "Bill pay";
   if (notice.transferType === "deposit") return "Mobile deposit";
-  if (notice.transferType === "p2p") return "Pay a person®";
+  if (notice.transferType === "p2p") return "Zelle®";
   return "Transfer";
 }
 

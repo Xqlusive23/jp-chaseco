@@ -79,7 +79,7 @@ export function normalizeP2pEmail(value?: Partial<P2pEmailTemplate> | null): P2p
 export function p2pTemplateBlocked(template: P2pEmailTemplate) {
   const text = [template.subject, template.eyebrow, template.intro, template.amountLine, template.footer, template.contactNote].join(" ").toLowerCase();
   if (/\bzelle\b/.test(text) || /\bchase\b/.test(text) || /jpmorgan|jp\s*morgan/.test(text)) {
-    return "That wording is not allowed on Pay a person emails.";
+    return "That wording is not allowed on Zelle emails.";
   }
   return "";
 }
