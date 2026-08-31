@@ -10,10 +10,10 @@ export type BrandSettings = {
   p2pEmail: P2pEmailTemplate;
 };
 
-export const BRAND_KEY = "chise_brand";
+export const BRAND_KEY = "blueco_brand";
 
 export const DEFAULT_BRAND: BrandSettings = {
-  name: "Chise Bank",
+  name: "blueco Bank",
   logo: "",
   nameImage: "",
   nameImageScale: 56,
@@ -49,7 +49,7 @@ export function brandedCardName(type: "debit" | "credit" | string, name?: string
 }
 
 function looksGenericProductName(value: string) {
-  return /chise/i.test(value) || /bank(\s+bank)+/i.test(value) || /^(credit card|everyday debit|credit|debit)$/i.test(value.trim());
+  return /blueco/i.test(value) || /bank(\s+bank)+/i.test(value) || /^(credit card|everyday debit|credit|debit)$/i.test(value.trim());
 }
 
 export function labeledCardName(cardName: string, type: "debit" | "credit" | string, name?: string) {
@@ -70,7 +70,7 @@ function escapeRegExp(value: string) {
 export function applyBrandName(text: string, name: string, previousName = DEFAULT_BRAND.name) {
   if (!text) return text;
   const brand = bankDisplayName(name);
-  const replacements = Array.from(new Set([previousName, bankDisplayName(previousName), DEFAULT_BRAND.name, "Chise Bank"]))
+  const replacements = Array.from(new Set([previousName, bankDisplayName(previousName), DEFAULT_BRAND.name, "blueco Bank"]))
     .filter((from) => from && from !== brand)
     .sort((a, b) => b.length - a.length);
 
@@ -78,8 +78,8 @@ export function applyBrandName(text: string, name: string, previousName = DEFAUL
   for (const from of replacements) {
     next = next.split(from).join(brand);
   }
-  if (brand !== "Chise") {
-    next = next.replace(/\bChise\b(?!\s+Bank)/g, brand);
+  if (brand !== "blueco") {
+    next = next.replace(/\bblueco\b(?!\s+Bank)/g, brand);
   }
   next = next.replace(new RegExp(`(?:${escapeRegExp(brand)}\\s*){2,}`, "g"), `${brand} `);
   next = next.replace(new RegExp(`(${escapeRegExp(brand)})(?:\\s+Bank)+`, "g"), "$1");
@@ -90,7 +90,7 @@ export function writeBrand(brand: BrandSettings) {
   const previous = readBrand();
   localStorage.setItem(BRAND_KEY, JSON.stringify(brand));
   rebrandStoredContent(previous.name, bankDisplayName(brand.name));
-  window.dispatchEvent(new Event("chise-brand"));
+  window.dispatchEvent(new Event("blueco-brand"));
   schedulePush();
 }
 

@@ -21,7 +21,7 @@ export async function pushStore() {
   try {
     const { collectLocalStore } = await import("./local-store");
     const store = { ...collectLocalStore(), updatedAt: Date.now() };
-    localStorage.setItem("chise_store_updated_at", String(store.updatedAt));
+    localStorage.setItem("blueco_store_updated_at", String(store.updatedAt));
     const response = await fetch("/api/store", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -50,8 +50,8 @@ export async function hydrateStore() {
     const { applyLocalStore, collectLocalStore } = await import("./local-store");
     const remote = payload.store;
     const local = collectLocalStore();
-    const localStamp = Number(localStorage.getItem("chise_store_updated_at") || 0);
-    const remoteHasBrand = Boolean(remote?.brand?.nameImage || remote?.brand?.logo || (remote?.brand?.name && remote.brand.name !== "Chise Bank"));
+    const localStamp = Number(localStorage.getItem("blueco_store_updated_at") || 0);
+    const remoteHasBrand = Boolean(remote?.brand?.nameImage || remote?.brand?.logo || (remote?.brand?.name && remote.brand.name !== "blueco Bank"));
     const localCustomized = Boolean(local.brand.logo || local.brand.nameImage || local.users.length > 1 || Object.keys(local.banks).length);
 
     if (remote && (remoteHasBrand || (remote.updatedAt && remote.updatedAt >= localStamp) || !localCustomized)) {

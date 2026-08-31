@@ -30,10 +30,10 @@ export function BankProvider({ children }: { children: ReactNode }) {
       setState(loadBank(current.username));
     }
     window.addEventListener("storage", syncBrand);
-    window.addEventListener("chise-brand", syncBrand);
+    window.addEventListener("blueco-brand", syncBrand);
     return () => {
       window.removeEventListener("storage", syncBrand);
-      window.removeEventListener("chise-brand", syncBrand);
+      window.removeEventListener("blueco-brand", syncBrand);
     };
   }, []);
 

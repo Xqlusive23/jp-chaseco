@@ -84,8 +84,8 @@ export default function AdminUserPage() {
       setAdjust((current) => ({ ...current, accountId: mainAccountId(bank.accounts) }));
     }
     loadMember();
-    window.addEventListener("chise-brand", loadMember);
-    return () => window.removeEventListener("chise-brand", loadMember);
+    window.addEventListener("blueco-brand", loadMember);
+    return () => window.removeEventListener("blueco-brand", loadMember);
   }, [username]);
 
   const visible = useMemo(() => {

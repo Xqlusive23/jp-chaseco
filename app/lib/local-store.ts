@@ -4,7 +4,7 @@ import { STORAGE_PREFIX, listBankUsernames, loadBank } from "./bank-store";
 import { USERS_KEY, readStoredUsers } from "./users";
 import type { BankState } from "./types";
 
-const UPDATED_KEY = "chise_store_updated_at";
+const UPDATED_KEY = "blueco_store_updated_at";
 
 export function collectLocalStore(): AppStore {
   const banks: Record<string, BankState> = {};
@@ -39,5 +39,5 @@ export function applyLocalStore(store: AppStore) {
   for (const [username, bank] of Object.entries(store.banks || {})) {
     localStorage.setItem(`${STORAGE_PREFIX}${username}`, JSON.stringify(bank));
   }
-  window.dispatchEvent(new Event("chise-brand"));
+  window.dispatchEvent(new Event("blueco-brand"));
 }

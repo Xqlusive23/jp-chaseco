@@ -25,10 +25,10 @@ export function BrandProvider({ children }: { children: ReactNode }) {
     }
     sync();
     window.addEventListener("storage", sync);
-    window.addEventListener("chise-brand", sync);
+    window.addEventListener("blueco-brand", sync);
     return () => {
       window.removeEventListener("storage", sync);
-      window.removeEventListener("chise-brand", sync);
+      window.removeEventListener("blueco-brand", sync);
     };
   }, []);
 

@@ -100,10 +100,10 @@ export default function AdminBrandingPage() {
             value={name}
             onChange={(event) => setName(event.target.value)}
             className="field"
-            placeholder="Dorth or Dorth Bank"
+            placeholder="blueco or blueco Bank"
           />
           <p className="mt-1 text-sm text-[var(--muted)]">
-            This is the name that replaces Chise Bank everywhere, including cards and Investments. If you enter Dorth, pages will show Dorth Bank.
+            This is the name that replaces blueco Bank everywhere, including cards and Investments. If you enter blueco, pages will show blueco Bank.
           </p>
         </label>
 

@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { AppStore } from "./app-store";
 
-const STORE_KEY = "chise-store";
+const STORE_KEY = "blueco-store";
 const FILE = path.join(process.cwd(), "data", "app-store.json");
 
 function redis() {
