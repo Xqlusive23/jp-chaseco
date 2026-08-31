@@ -68,7 +68,7 @@ export default function DashboardPage() {
 
       {state.accountHold && (
         <div className="rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-orange-800">
-          This account is on hold. Transfers and payments cannot go through until an admin releases it.
+          This account is on restricted. Contact support to reactivate your account.
         </div>
       )}
 

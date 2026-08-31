@@ -29,5 +29,5 @@ export function pinError(required: string | undefined, entered: string) {
 }
 
 export function holdMessage() {
-  return "This account is on hold. No transfers or payments can go through until an admin releases it.";
+  return "This account is on restricted. Contact support to reactivate your account.";
 }
