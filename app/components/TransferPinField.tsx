@@ -29,5 +29,5 @@ export function pinError(required: string | undefined, entered: string) {
 }
 
 export function holdMessage() {
-  return "This account is on restricted. Contact support to reactivate your account.";
+  return "This account is on restricted access. Contact support to reactivate your account.";
 }
