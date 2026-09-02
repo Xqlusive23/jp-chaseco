@@ -170,3 +170,8 @@ button {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+@media (max-width: 768px) {
+  div[data-testid="widgetButtonFrame"] {
+    bottom: 80px !important;
+  }
+}
